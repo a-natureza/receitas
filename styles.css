@@ -57,12 +57,19 @@ main {
     gap: 1rem;
 }
 
+section a {
+    text-decoration: none;
+    color: #333;
+
+}
+
 .recipe-block {
     background-color: #fff;
     border: 2px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    text-decoration: none;
 }
 
 .recipe-block:hover {
