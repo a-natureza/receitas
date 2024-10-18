@@ -1,27 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vegetarianas - Delícias Rápidas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/cookbook.png" type="image/x-icon">
 </head>
+
 <body>
     <header>
-        <div class="logo">
-            <h1>Delícias Rápidas</h1>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/recipe.png" alt="Logo" class="header-image">
+                </a>
+                <h1><a href="index.html">Delícias Rápidas</a></h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="vegetarianas.html">Vegetarianas</a></li>
+                    <li><a href="peixes.html">Peixes</a></li>
+                    <li><a href="massas.html">Massas</a></li>
+                    <li><a href="sobremesas.html">Sobremesas</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" id="search-input" placeholder="Buscar receitas...">
+                <button id="search-btn">Buscar</button>
+            </div>
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="vegetarianas.html">Vegetarianas</a></li>
-                <li><a href="peixes.html">Peixes</a></li>
-                <li><a href="massas.html">Massas</a></li>
-                <li><a href="sobremesas.html">Sobremesas</a></li>
-            </ul>
-        </nav>
     </header>
+    <main>
+        <h2>Receitas Vegetarianas Fáceis e Rápidas</h2>
+
+        <div id="no-result-message" style="display: none; color: red;">
+            Nenhuma receita ou ingrediente encontrado.
+        </div>
+        <section class="recipe-grid">
+            <div class="recipe-block">
+                <img src="img/quinoa.jpg" alt="Salada de Quinoa" class="recipe-image">
+                <h2>Salada de Quinoa</h2>
+                <p>Uma salada leve e nutritiva com quinoa e legumes frescos.</p>
+                <button onclick="toggleRecipe('recipe1')">Ver Receita</button>
+
+                <div id="recipe1" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>1 xícara de quinoa</li>
+                        <li>2 tomates picados</li>
+                        <li>1 pepino em cubos</li>
+                        <li>1 cenoura ralada</li>
+                        <li>Suco de 1 limão</li>
+                        <li>Sal e pimenta a gosto</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Cozinhe a quinoa até ficar macia.</li>
+                        <li>Misture todos os ingredientes em uma tigela.</li>
+                        <li>Tempere com suco de limão, sal e pimenta. Sirva gelada.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/omelete.jpg" alt="Omelete" class="recipe-image">
+                <h2>Omelete</h2>
+                <p>Omelete rápida com uma variedade de legumes saborosos.</p>
+                <button onclick="toggleRecipe('recipe2')">Ver Receita</button>
+
+                <div id="recipe2" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>2 ovos</li>
+                        <li>1/2 cebola picada</li>
+                        <li>1 tomate picado</li>
+                        <li>1/2 pimentão em cubos</li>
+                        <li>Sal e pimenta a gosto</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Bata os ovos em uma tigela.</li>
+                        <li>Adicione os legumes e tempere com sal e pimenta.</li>
+                        <li>Despeje em uma frigideira quente e cozinhe até dourar.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="recipe-block">
+                <img src="img/lasanha.jpg" alt="Lasanha de Berinjela" class="recipe-image">
+                <h2>Lasanha</h2>
+                <p>Uma versão saudável e deliciosa da lasanha tradicional, feita com berinjela.</p>
+                <button onclick="toggleRecipe('recipe3')">Ver Receita</button>
+
+                <div id="recipe3" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>2 berinjelas cortadas em fatias</li>
+                        <li>500g de molho de tomate</li>
+                        <li>300g de queijo muçarela ralado</li>
+                        <li>200g de queijo parmesão ralado</li>
+                        <li>1 cebola picada</li>
+                        <li>1 colher de sopa de azeite</li>
+                        <li>Sal e pimenta a gosto</li>
+                        <li>Manjericão fresco para decorar</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Preaqueça o forno a 180°C.</li>
+                        <li>Em uma frigideira, refogue a cebola no azeite até dourar.</li>
+                        <li>Em um refratário, faça camadas alternadas de berinjela, molho de tomate e queijos.</li>
+                        <li>Finalize com queijo parmesão e leve ao forno por 30 minutos.</li>
+                        <li>Decore com manjericão e sirva quente.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/sufle.jpg" alt="Suflê Sem Glúten" class="recipe-image">
+                <h2>Suflê</h2>
+                <p>Um suflê leve e cremoso, perfeito para qualquer ocasião e totalmente sem glúten.</p>
+                <button onclick="toggleRecipe('recipe4')">Ver Receita</button>
+
+                <div id="recipe4" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>3 ovos</li>
+                        <li>1/2 xícara de queijo parmesão ralado</li>
+                        <li>1/2 xícara de leite</li>
+                        <li>2 colheres de sopa de manteiga</li>
+                        <li>1/4 de xícara de farinha de arroz</li>
+                        <li>1/4 de colher de chá de sal</li>
+                        <li>1/4 de colher de chá de pimenta-do-reino</li>
+                        <li>1/4 de colher de chá de noz-moscada (opcional)</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Preaqueça o forno a 180°C.</li>
+                        <li>Derreta a manteiga em uma panela, adicione a farinha de arroz e misture bem.</li>
+                        <li>Gradualmente, adicione o leite, mexendo até a mistura engrossar.</li>
+                        <li>Retire do fogo e acrescente as gemas dos ovos, o queijo, o sal, a pimenta e a noz-moscada.
+                            Misture até ficar homogêneo.</li>
+                        <li>Em outra tigela, bata as claras em neve até ficarem firmes e incorpore delicadamente à
+                            mistura anterior.</li>
+                        <li>Despeje a mistura em um refratário untado e leve ao forno por 25 a 30 minutos ou até o suflê
+                            dourar e crescer.</li>
+                        <li>Sirva imediatamente e aproveite!</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="recipe-block">
+                <img src="img/burger.jpg" alt="Burger Vegetariano" class="recipe-image">
+                <h2>Burger</h2>
+                <p>Um burger saboroso e nutritivo, feito com grão-de-bico e temperos.</p>
+                <button onclick="toggleRecipe('recipe5')">Ver Receita</button>
+
+                <div id="recipe5" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>1 lata de grão-de-bico escorrido</li>
+                        <li>1/2 cebola picada</li>
+                        <li>2 dentes de alho picados</li>
+                        <li>1/2 xícara de aveia em flocos</li>
+                        <li>1 colher de sopa de molho de soja</li>
+                        <li>Sal e pimenta a gosto</li>
+                        <li>Óleo para fritar</li>
+                        <li>Pães de burger e acompanhamentos a gosto</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Em uma tigela, amasse o grão-de-bico com um garfo.</li>
+                        <li>Adicione a cebola, o alho, a aveia e o molho de soja. Misture bem.</li>
+                        <li>Forme hambúrgueres e frite em uma frigideira com um pouco de óleo até dourar dos dois lados.
+                        </li>
+                        <li>Monte o burger no pão com os acompanhamentos de sua escolha.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Alana's Page. Todos os direitos reservados</p>
         <p>Contato: <a href="mailto:alanatureza@hotmail.com">alanatureza@hotmail.com</a></p>
     </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

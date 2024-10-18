@@ -1,0 +1,112 @@
+[
+    {
+        "category": "vegetarianas",
+        "title": "Salada de Tomate",
+        "ingredients": "tomate, alface, azeite"
+    },
+    {
+        "category": "vegetarianas",
+        "title": "Salada de Quinoa",
+        "ingredients": "quinoa, tomates, pepino, cenoura, suco de limão, sal, pimenta"
+    },
+    {
+        "category": "vegetarianas",
+        "title": "Omelete",
+        "ingredients": "ovos, cebola, tomate, pimentão, sal, pimenta"
+    },
+    {
+        "category": "vegetarianas",
+        "title": "Lasanha de Berinjela",
+        "ingredients": "berinjelas, molho de tomate, queijo muçarela, queijo parmesão, cebola, azeite, sal, pimenta, manjericão"
+    },
+    {
+        "category": "vegetarianas",
+        "title": "Suflê Sem Glúten",
+        "ingredients": "ovos, queijo parmesão, leite, manteiga, farinha de arroz, sal, pimenta, noz-moscada"
+    },
+    {
+        "category": "vegetarianas",
+        "title": "Burger Vegetariano",
+        "ingredients": "grão-de-bico, cebola, alho, aveia, molho de soja, sal, pimenta, óleo, pães de burger"
+    },
+    {
+        "category": "peixes",
+        "title": "Filé de Peixe Grelhado",
+        "ingredients": "peixe, limão, azeite"
+    },
+    {
+        "category": "peixes",
+        "title": "Salmão Grelhado",
+        "ingredients": "filés de salmão, suco de limão, azeite, sal, pimenta, ervas frescas"
+    },
+    {
+        "category": "peixes",
+        "title": "Moqueca de Peixe",
+        "ingredients": "filé de peixe, cebola, pimentão vermelho, pimentão amarelo, leite de coco, tomates, coentro, sal, pimenta"
+    },
+    {
+        "category": "peixes",
+        "title": "Bacalhau Assado",
+        "ingredients": "bacalhau dessalgado, batatas, cebola, pimentão verde, azeitonas pretas, azeite, sal, pimenta"
+    },
+    {
+        "category": "peixes",
+        "title": "Tilápia Crocante",
+        "ingredients": "filés de tilápia, farinha de rosca, ervas secas, ovo, sal, pimenta, azeite"
+    },
+    {
+        "category": "peixes",
+        "title": "Camarão ao Alho e Óleo",
+        "ingredients": "camarões, alho, azeite, suco de limão, salsa, sal, pimenta"
+    },
+    {
+        "category": "massas",
+        "title": "Spaghetti",
+        "ingredients": "spaghetti, tomates maduros, alho, manjericão, sal, pimenta, azeite de oliva"
+    },
+    {
+        "category": "massas",
+        "title": "Fettuccine",
+        "ingredients": "fettuccine, manteiga, creme de leite, queijo parmesão, sal, pimenta"
+    },
+    {
+        "category": "massas",
+        "title": "Penne",
+        "ingredients": "penne, manjericão fresco, nozes, azeite de oliva, queijo parmesão, alho, sal, pimenta"
+    },
+    {
+        "category": "massas",
+        "title": "Mac&Cheese",
+        "ingredients": "macarrão tipo cotovelinho, manteiga, farinha de trigo, leite, queijo cheddar, sal, pimenta"
+    },
+    {
+        "category": "massas",
+        "title": "Ravioli",
+        "ingredients": "ravioli, manteiga, sálvia fresca, queijo parmesão, sal, pimenta"
+    },
+    {
+        "category": "sobremesas",
+        "title": "Mousse de Chocolate",
+        "ingredients": "chocolate meio amargo, claras de ovo, açúcar, creme de leite sem soro"
+    },
+    {
+        "category": "sobremesas",
+        "title": "Pudim no Micro-ondas",
+        "ingredients": "leite condensado, leite, ovos, açúcar"
+    },
+    {
+        "category": "sobremesas",
+        "title": "Brigadeiro de Micro-ondas",
+        "ingredients": "leite condensado, chocolate em pó, manteiga, chocolate granulado"
+    },
+    {
+        "category": "sobremesas",
+        "title": "Creme de Papaya & Cassis",
+        "ingredients": "mamão papaya, sorvete de creme, licor de cassis"
+    },
+    {
+        "category": "sobremesas",
+        "title": "Torrada com Pasta de Amendoim, Banana e Mel",
+        "ingredients": "pão, pasta de amendoim, banana, mel, canela em pó"
+    }
+]

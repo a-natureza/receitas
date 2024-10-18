@@ -1,27 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peixes - Delícias Rápidas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/cookbook.png" type="image/x-icon">
 </head>
+
 <body>
     <header>
-        <div class="logo">
-            <h1>Delícias Rápidas</h1>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/recipe.png" alt="Logo" class="header-image">
+                </a>
+                <h1><a href="index.html">Delícias Rápidas</a></h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="vegetarianas.html">Vegetarianas</a></li>
+                    <li><a href="peixes.html">Peixes</a></li>
+                    <li><a href="massas.html">Massas</a></li>
+                    <li><a href="sobremesas.html">Sobremesas</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" id="search-input" placeholder="Buscar receitas...">
+                <button id="search-btn">Buscar</button>
+            </div>
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="vegetarianas.html">Vegetarianas</a></li>
-                <li><a href="peixes.html">Peixes</a></li>
-                <li><a href="massas.html">Massas</a></li>
-                <li><a href="sobremesas.html">Sobremesas</a></li>
-            </ul>
-        </nav>
     </header>
+    <main>
+        <h2>Receitas de Peixes Fáceis e Rápidas</h2>
+
+        <div id="no-result-message" style="display: none; color: red;">
+            Nenhuma receita ou ingrediente encontrado.
+        </div>
+
+        <section class="recipe-grid">
+            <div class="recipe-block">
+                <img src="img/salmao.jpg" alt="Salmão Grelhado" class="recipe-image">
+                <h2>Salmão</h2>
+                <p>Uma receita simples e saudável de salmão grelhado com limão e ervas frescas.</p>
+                <button onclick="toggleRecipe('recipe1')">Ver Receita</button>
+
+                <div id="recipe1" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>2 filés de salmão</li>
+                        <li>Suco de 1 limão</li>
+                        <li>1 colher de sopa de azeite</li>
+                        <li>Sal e pimenta a gosto</li>
+                        <li>Ervas frescas a gosto (como alecrim ou salsa)</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Tempere o salmão com limão, azeite, sal, pimenta e as ervas.</li>
+                        <li>Grelhe os filés em uma frigideira quente até dourar dos dois lados.</li>
+                        <li>Sirva com salada ou arroz integral.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/moqueca.jpg" alt="Moqueca de Peixe" class="recipe-image">
+                <h2>Moqueca</h2>
+                <p>Uma deliciosa moqueca de peixe com leite de coco e pimentões.</p>
+                <button onclick="toggleRecipe('recipe2')">Ver Receita</button>
+
+                <div id="recipe2" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>500g de filé de peixe (como tilápia ou robalo)</li>
+                        <li>1 cebola grande fatiada</li>
+                        <li>1 pimentão vermelho fatiado</li>
+                        <li>1 pimentão amarelo fatiado</li>
+                        <li>200ml de leite de coco</li>
+                        <li>2 tomates fatiados</li>
+                        <li>Coentro a gosto</li>
+                        <li>Sal e pimenta a gosto</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Em uma panela, refogue a cebola, os pimentões e os tomates com um pouco de azeite.</li>
+                        <li>Adicione o peixe, tempere com sal e pimenta, e acrescente o leite de coco.</li>
+                        <li>Cozinhe por cerca de 20 minutos até que o peixe esteja macio.</li>
+                        <li>Finalize com coentro fresco e sirva com arroz branco.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/bacalhau.jpg" alt="Bacalhau Assado" class="recipe-image">
+                <h2>Bacalhau</h2>
+                <p>Um clássico bacalhau assado com batatas, pimentões e azeitonas.</p>
+                <button onclick="toggleRecipe('recipe3')">Ver Receita</button>
+
+                <div id="recipe3" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>500g de bacalhau dessalgado</li>
+                        <li>4 batatas cortadas em rodelas</li>
+                        <li>1 cebola fatiada</li>
+                        <li>1 pimentão verde fatiado</li>
+                        <li>Azeitonas pretas a gosto</li>
+                        <li>1/2 xícara de azeite</li>
+                        <li>Sal e pimenta a gosto</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Cozinhe as batatas em água até ficarem macias.</li>
+                        <li>Em um refratário, faça camadas de bacalhau, batatas, cebola, pimentão e azeitonas.</li>
+                        <li>Regue com azeite, tempere com sal e pimenta, e asse em forno pré-aquecido a 180°C por 30
+                            minutos.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/tilapia.jpg" alt="Tilápia Crocante" class="recipe-image">
+                <h2>Tilápia</h2>
+                <p>Tilápia empanada crocante com farinha de rosca e ervas.</p>
+                <button onclick="toggleRecipe('recipe4')">Ver Receita</button>
+
+                <div id="recipe4" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>2 filés de tilápia</li>
+                        <li>1 xícara de farinha de rosca</li>
+                        <li>1 colher de sopa de ervas secas (orégano, manjericão)</li>
+                        <li>1 ovo batido</li>
+                        <li>Sal e pimenta a gosto</li>
+                        <li>Azeite para fritar</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Tempere os filés de tilápia com sal e pimenta.</li>
+                        <li>Empane os filés passando primeiro no ovo batido e depois na mistura de farinha de rosca e
+                            ervas.</li>
+                        <li>Frite os filés em uma frigideira com azeite até dourar.</li>
+                        <li>Sirva com salada ou arroz.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/camarao.jpg" alt="Camarão ao Alho e Óleo" class="recipe-image">
+                <h2>Camarão</h2>
+                <p>Camarões salteados no alho e óleo com toque de limão e salsa.</p>
+                <button onclick="toggleRecipe('recipe5')">Ver Receita</button>
+
+                <div id="recipe5" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>500g de camarões limpos</li>
+                        <li>4 dentes de alho picados</li>
+                        <li>2 colheres de sopa de azeite</li>
+                        <li>Suco de 1 limão</li>
+                        <li>Salsa picada a gosto</li>
+                        <li>Sal e pimenta a gosto</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Aqueça o azeite em uma frigideira e refogue o alho até dourar.</li>
+                        <li>Adicione os camarões, tempere com sal e pimenta, e cozinhe por 5 a 7 minutos.</li>
+                        <li>Regue com suco de limão e finalize com salsa picada. Sirva imediatamente.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <p>&copy; 2024 Alana's Page. Todos os direitos reservados</p>
         <p>Contato: <a href="mailto:alanatureza@hotmail.com">alanatureza@hotmail.com</a></p>
     </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

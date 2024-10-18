@@ -1,27 +1,180 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Massas - Delícias Rápidas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/cookbook.png" type="image/x-icon">
 </head>
+
 <body>
     <header>
-        <div class="logo">
-            <h1>Delícias Rápidas</h1>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/recipe.png" alt="Logo" class="header-image">
+                </a>
+                <h1><a href="index.html">Delícias Rápidas</a></h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="vegetarianas.html">Vegetarianas</a></li>
+                    <li><a href="peixes.html">Peixes</a></li>
+                    <li><a href="massas.html">Massas</a></li>
+                    <li><a href="sobremesas.html">Sobremesas</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" id="search-input" placeholder="Buscar receitas...">
+                <button id="search-btn">Buscar</button>
+            </div>
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="vegetarianas.html">Vegetarianas</a></li>
-                <li><a href="peixes.html">Peixes</a></li>
-                <li><a href="massas.html">Massas</a></li>
-                <li><a href="sobremesas.html">Sobremesas</a></li>
-            </ul>
-        </nav>
     </header>
+    <main>
+        <h2>Receitas de Massas Fáceis e Rápidas</h2>
+        <div id="no-result-message" style="display: none; color: red;">
+            Nenhuma receita ou ingrediente encontrado.
+        </div>
+        <section class="recipe-grid">
+            <div class="recipe-block">
+                <img src="img/spaghetti.jpg" alt="Spaghetti ao Molho de Tomate" class="recipe-image">
+                <h2>Spaghetti</h2>
+                <p>Uma massa clássica com molho de tomate fresco e manjericão.</p>
+                <button onclick="toggleRecipe('recipe1')">Ver Receita</button>
+
+                <div id="recipe1" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>250g de spaghetti</li>
+                        <li>500g de tomates maduros</li>
+                        <li>2 dentes de alho picados</li>
+                        <li>Folhas de manjericão fresco</li>
+                        <li>Sal e pimenta a gosto</li>
+                        <li>Azeite de oliva</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Cozinhe o spaghetti em água salgada até ficar al dente.</li>
+                        <li>Em uma panela, refogue o alho no azeite e adicione os tomates picados.</li>
+                        <li>Deixe cozinhar até formar um molho e adicione manjericão, sal e pimenta.</li>
+                        <li>Escorra a massa e misture ao molho. Sirva quente.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/fettuccine.jpg" alt="Fettuccine Alfredo" class="recipe-image">
+                <h2>Fettuccine</h2>
+                <p>Um delicioso prato cremoso de fettuccine ao molho Alfredo.</p>
+                <button onclick="toggleRecipe('recipe2')">Ver Receita</button>
+
+                <div id="recipe2" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>300g de fettuccine</li>
+                        <li>2 colheres de sopa de manteiga</li>
+                        <li>1 xícara de creme de leite</li>
+                        <li>1 xícara de queijo parmesão ralado</li>
+                        <li>Sal e pimenta a gosto</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Cozinhe o fettuccine até ficar al dente.</li>
+                        <li>Em uma panela, derreta a manteiga e adicione o creme de leite.</li>
+                        <li>Misture o parmesão até formar um molho cremoso. Tempere com sal e pimenta.</li>
+                        <li>Adicione o fettuccine ao molho e misture bem. Sirva imediatamente.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/pesto.jpg" alt="Penne" class="recipe-image">
+                <h2>Penne</h2>
+                <p>Uma receita rápida de penne com molho pesto fresco de manjericão.</p>
+                <button onclick="toggleRecipe('recipe3')">Ver Receita</button>
+
+                <div id="recipe3" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>250g de penne</li>
+                        <li>1 xícara de manjericão fresco</li>
+                        <li>1/4 de xícara de nozes</li>
+                        <li>1/2 xícara de azeite de oliva</li>
+                        <li>1/2 xícara de queijo parmesão ralado</li>
+                        <li>2 dentes de alho</li>
+                        <li>Sal e pimenta a gosto</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Cozinhe o penne até ficar al dente.</li>
+                        <li>No liquidificador, bata o manjericão, nozes, azeite, alho e parmesão até formar um pesto.
+                        </li>
+                        <li>Misture o molho à massa cozida e sirva com mais queijo ralado por cima.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/mac&cheese.jpg" alt="Mac and Cheese" class="recipe-image">
+                <h2>Mac&Cheese</h2>
+                <p>O clássico macarrão com queijo, cremoso e fácil de preparar.</p>
+                <button onclick="toggleRecipe('recipe4')">Ver Receita</button>
+
+                <div id="recipe4" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>250g de macarrão tipo cotovelinho</li>
+                        <li>2 colheres de sopa de manteiga</li>
+                        <li>2 colheres de sopa de farinha de trigo</li>
+                        <li>2 xícaras de leite</li>
+                        <li>2 xícaras de queijo cheddar ralado</li>
+                        <li>Sal e pimenta a gosto</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Cozinhe o macarrão até ficar al dente e reserve.</li>
+                        <li>Em uma panela, derreta a manteiga, adicione a farinha e cozinhe por 2 minutos.</li>
+                        <li>Adicione o leite aos poucos, mexendo sempre até engrossar.</li>
+                        <li>Retire do fogo e misture o queijo cheddar até derreter. Tempere com sal e pimenta.</li>
+                        <li>Misture o molho de queijo com o macarrão e sirva quente.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/ravioli.jpg" alt="Ravioli com Molho de Manteiga e Sálvia" class="recipe-image">
+                <h2>Ravioli</h2>
+                <p>Ravioli recheado servido com um delicioso molho de manteiga e sálvia.</p>
+                <button onclick="toggleRecipe('recipe5')">Ver Receita</button>
+
+                <div id="recipe5" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>300g de ravioli (de sua escolha, sem carne)</li>
+                        <li>50g de manteiga</li>
+                        <li>Folhas de sálvia fresca</li>
+                        <li>Queijo parmesão ralado a gosto</li>
+                        <li>Sal e pimenta a gosto</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Cozinhe o ravioli até ficar al dente.</li>
+                        <li>Em uma frigideira, derreta a manteiga e adicione as folhas de sálvia até ficarem crocantes.
+                        </li>
+                        <li>Tempere com sal e pimenta e misture o ravioli ao molho.</li>
+                        <li>Sirva com queijo parmesão ralado por cima.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Alana's Page. Todos os direitos reservados</p>
         <p>Contato: <a href="mailto:alanatureza@hotmail.com">alanatureza@hotmail.com</a></p>
     </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

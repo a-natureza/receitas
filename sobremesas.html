@@ -1,27 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobremesas - Delícias Rápidas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/cookbook.png" type="image/x-icon">
 </head>
+
 <body>
     <header>
-        <div class="logo">
-            <h1>Delícias Rápidas</h1>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/recipe.png" alt="Logo" class="header-image">
+                </a>
+                <h1><a href="index.html">Delícias Rápidas</a></h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="vegetarianas.html">Vegetarianas</a></li>
+                    <li><a href="peixes.html">Peixes</a></li>
+                    <li><a href="massas.html">Massas</a></li>
+                    <li><a href="sobremesas.html">Sobremesas</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" id="search-input" placeholder="Buscar receitas...">
+                <button id="search-btn">Buscar</button>
+            </div>
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="vegetarianas.html">Vegetarianas</a></li>
-                <li><a href="peixes.html">Peixes</a></li>
-                <li><a href="massas.html">Massas</a></li>
-                <li><a href="sobremesas.html">Sobremesas</a></li>
-            </ul>
-        </nav>
     </header>
+    <main>
+        <h2>Receitas de Sobremesas Rápidas e Fáceis</h2>
+
+        <div id="no-result-message" style="display: none; color: red;">
+            Nenhuma receita ou ingrediente encontrado.
+        </div>
+        <section class="recipe-grid">
+            <div class="recipe-block">
+                <img src="img/mousse.jpg" alt="Mousse de Chocolate" class="recipe-image">
+                <h2>Mousse de Chocolate</h2>
+                <p>Uma sobremesa clássica e deliciosa, pronta em poucos minutos.</p>
+                <button onclick="toggleRecipe('recipe1')">Ver Receita</button>
+
+                <div id="recipe1" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>200g de chocolate meio amargo</li>
+                        <li>3 claras de ovo</li>
+                        <li>3 colheres de sopa de açúcar</li>
+                        <li>1 lata de creme de leite sem soro</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Derreta o chocolate em banho-maria.</li>
+                        <li>Bata as claras em neve e adicione o açúcar aos poucos.</li>
+                        <li>Misture o creme de leite ao chocolate derretido e incorpore delicadamente às claras em neve.
+                        </li>
+                        <li>Leve à geladeira por pelo menos 2 horas antes de servir.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/pudim.jpg" alt="Pudim de Leite no Micro-ondas" class="recipe-image">
+                <h2>Pudim no Micro-ondas</h2>
+                <p>Um pudim rápido feito diretamente no micro-ondas, sem complicações.</p>
+                <button onclick="toggleRecipe('recipe2')">Ver Receita</button>
+
+                <div id="recipe2" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>1 lata de leite condensado</li>
+                        <li>1 lata de leite (use a lata do leite condensado como medida)</li>
+                        <li>3 ovos</li>
+                        <li>1 xícara de açúcar (para o caramelo)</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Faça o caramelo com o açúcar e espalhe no fundo de uma forma própria para micro-ondas.</li>
+                        <li>Bata no liquidificador o leite condensado, o leite e os ovos.</li>
+                        <li>Despeje a mistura na forma e leve ao micro-ondas por cerca de 10 minutos.</li>
+                        <li>Deixe esfriar e desenforme.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/brigadeiro.jpg" alt="Brigadeiro de Micro-ondas" class="recipe-image">
+                <h2>Brigadeiro de Micro-ondas</h2>
+                <p>O clássico brigadeiro, pronto em minutos no micro-ondas.</p>
+                <button onclick="toggleRecipe('recipe3')">Ver Receita</button>
+
+                <div id="recipe3" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>1 lata de leite condensado</li>
+                        <li>2 colheres de sopa de chocolate em pó</li>
+                        <li>1 colher de sopa de manteiga</li>
+                        <li>Chocolate granulado (para decorar)</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Misture o leite condensado, o chocolate e a manteiga em um recipiente próprio para
+                            micro-ondas.</li>
+                        <li>Leve ao micro-ondas por 6 a 8 minutos, mexendo a cada 2 minutos.</li>
+                        <li>Deixe esfriar um pouco, enrole os brigadeiros e passe no granulado.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/papaya.jpg" alt="Creme de Mamão Papaya com Cassis" class="recipe-image">
+                <h2>Creme de Papaya & Cassis</h2>
+                <p>Uma sobremesa refrescante e sofisticada feita com mamão papaya.</p>
+                <button onclick="toggleRecipe('recipe4')">Ver Receita</button>
+
+                <div id="recipe4" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>1 mamão papaya maduro</li>
+                        <li>1 pote de sorvete de creme</li>
+                        <li>Licor de cassis (a gosto)</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Bata o mamão papaya com o sorvete no liquidificador até obter um creme homogêneo.</li>
+                        <li>Sirva em taças e regue com o licor de cassis por cima.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-block">
+                <img src="img/torrada.jpg" alt="Torrada com Pasta de Amendoim, Banana e Mel" class="recipe-image">
+                <h2>Torrada com Pasta de Amendoim</h2>
+                <p>Uma combinação deliciosa e nutritiva para um lanche rápido.</p>
+                <button onclick="toggleRecipe('recipe5')">Ver Receita</button>
+
+                <div id="recipe5" class="recipe-details" style="display:none;">
+                    <h4>Ingredientes:</h4>
+                    <ul>
+                        <li>2 fatias de pão integral (ou outro pão de sua escolha)</li>
+                        <li>2 colheres de sopa de pasta de amendoim</li>
+                        <li>1 banana cortada em rodelas</li>
+                        <li>Mel a gosto</li>
+                        <li>Canela em pó (opcional)</li>
+                    </ul>
+                    <h4>Modo de Preparo:</h4>
+                    <ol>
+                        <li>Torre as fatias de pão até ficarem crocantes.</li>
+                        <li>Espalhe a pasta de amendoim uniformemente sobre as torradas.</li>
+                        <li>Coloque as rodelas de banana por cima.</li>
+                        <li>Regue com mel e, se desejar, polvilhe um pouco de canela.</li>
+                        <li>Sirva imediatamente e aproveite!</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Alana's Page. Todos os direitos reservados</p>
         <p>Contato: <a href="mailto:alanatureza@hotmail.com">alanatureza@hotmail.com</a></p>
     </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

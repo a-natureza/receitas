@@ -11,45 +11,66 @@
 
 <body>
     <header>
-        <div class="logo">
-            <h1>Delícias Rápidas</h1>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/recipe.png" alt="Logo" class="header-image">
+                </a>
+                <h1><a href="index.html">Delícias Rápidas</a></h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="vegetarianas.html">Vegetarianas</a></li>
+                    <li><a href="peixes.html">Peixes</a></li>
+                    <li><a href="massas.html">Massas</a></li>
+                    <li><a href="sobremesas.html">Sobremesas</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" id="search-input" placeholder="Buscar receitas...">
+                <button id="search-btn">Buscar</button>
+                <div id="search-results"></div>
+            </div>
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="vegetarianas.html">Vegetarianas</a></li>
-                <li><a href="peixes.html">Peixes</a></li>
-                <li><a href="massas.html">Massas</a></li>
-                <li><a href="sobremesas.html">Sobremesas</a></li>
-            </ul>
-        </nav>
     </header>
+
     <main>
         <section class="grid">
             <div class="recipe-block" id="vegetarianas">
                 <a href="vegetarianas.html"><img src="img/vegetarianas.jpg" alt="vegetarianas">
-                <h2>Vegetarianas</h2></a>
+                    <h2>Vegetarianas</h2>
+                </a>
             </div>
             <div class="recipe-block" id="peixes">
                 <a href="peixes.html"><img src="img/peixes.jpg" alt="peixes">
-                <h2>Peixes</h2></a>
+                    <h2>Peixes</h2>
+                </a>
             </div>
             <div class="recipe-block" id="massas">
                 <a href="massas.html"><img src="img/massas.jpg" alt="massas">
-                <h2>Massas</h2></a>
+                    <h2>Massas</h2>
+                </a>
             </div>
             <div class="recipe-block" id="sobremesas">
                 <a href="sobremesas.html"><img src="img/sobremesas.jpg" alt="sobremesas">
-                <h2>Sobremesas</h2></a>
+                    <h2>Sobremesas</h2>
+                </a>
             </div>
         </section>
+
+        <div id="no-result-message" style="display: none; color: red;">
+            Nenhuma receita ou ingrediente encontrado.
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Alana's Page. Todos os direitos reservados</p>
         <p>Contato: <a href="mailto:alanatureza@hotmail.com">alanatureza@hotmail.com</a></p>
-        <!-- <p>Siga minhas redes sociais:
+        <p>Siga minhas redes sociais:
             <a href="https://www.instagram.com/tendanapraia">Instagram</a>
-            <a href="https://www.facebook.com/shiatsueacupuntura/">Facebook</a>
-        </p> -->
+            <a href="https://www.linkedin.com/in/alana-daniele/">LinkedIn</a>
+        </p>
     </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
