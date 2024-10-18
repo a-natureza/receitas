@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Busca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/recipe.png" alt="Logo" class="header-image">
+                </a>
+                <h1><a href="index.html">Delícias Rápidas</a></h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="vegetarianas.html">Vegetarianas</a></li>
+                    <li><a href="peixes.html">Peixes</a></li>
+                    <li><a href="massas.html">Massas</a></li>
+                    <li><a href="sobremesas.html">Sobremesas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="search-results">
+        <h1>Resultados da Busca</h1>
+        <div id="no-result-message" style="display: none; color: red;">
+            Nenhuma receita ou ingrediente encontrado.
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Alana's Page. Todos os direitos reservados</p>
+    </footer>
+    <script>
+        // Função para carregar as receitas de um arquivo JSON
+        async function loadRecipes() {
+            try {
+                const response = await fetch('recipes.json');
+                const recipes = await response.json();
+                return recipes;
+            } catch (error) {
+                console.error('Erro ao carregar as receitas:', error);
+                return [];
+            }
+        }
+
+        // Função para exibir os resultados de busca
+        async function displaySearchResults() {
+            const searchTerm = localStorage.getItem('searchTerm').toLowerCase(); // Recupera o termo de busca
+            const recipes = await loadRecipes();
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = ''; // Limpa resultados anteriores
+
+            let found = false;
+
+            recipes.forEach(recipe => {
+                const title = recipe.title.toLowerCase();
+                const ingredients = recipe.ingredients.toLowerCase();
+
+                if (title.includes(searchTerm) || ingredients.includes(searchTerm)) {
+                    const recipeBlock = document.createElement('div');
+                    recipeBlock.className = 'recipe-block'; // Estilize no CSS
+                    recipeBlock.innerHTML = `
+                <h2>${recipe.title}</h2>
+                <p><strong>Categoria:</strong> ${recipe.category}</p>
+                <p><strong>Ingredientes:</strong> ${recipe.ingredients}</p>
+            `;
+                    resultsContainer.appendChild(recipeBlock);
+                    found = true;
+                }
+            });
+
+            const noResultMessage = document.getElementById('no-result-message');
+            if (!found) {
+                noResultMessage.style.display = 'block';
+            } else {
+                noResultMessage.style.display = 'none';
+            }
+        }
+
+        // Executa a função ao carregar a página de resultados
+        window.onload = displaySearchResults;
+
+    </script>
+</body>
+
+</html>

@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delícias Rápidas</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://receitas-rapidas.netlify.app/">
+    <meta property="og:title" content="Delícias Rápidas - Receitas Práticas e Fáceis">
+    <meta property="og:description" content="Encontre receitas rápidas, práticas e deliciosas para o seu dia a dia.">
+    <meta property="og:image" content="img/thumbnail.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/cookbook.png" type="image/x-icon">
 </head>
@@ -35,6 +40,38 @@
     </header>
 
     <main>
+        <section class="container">
+            <h2>Bem-vindo ao Delícias Rápidas!</h2>
+            <br>
+            <p>Está com fome e não sabe o que preparar? Nós estamos aqui para te ajudar! No <strong>Delícias
+                    Rápidas</strong>, você encontra receitas práticas e deliciosas, perfeitas para o seu dia a dia.
+                Nossa missão é facilitar a sua vida na cozinha, oferecendo receitas rápidas e fáceis de fazer, sem
+                complicação.</p>
+            <br>
+            <h3>Como funciona a busca?</h3>
+            <p>É simples! Quer encontrar uma receita específica ou com aqueles ingredientes que você tem em casa? Use o
+                campo de busca no topo da página! Basta digitar o nome de um prato ou algum ingrediente que você tenha,
+                como “macarrão” ou “queijo”, e clicar em <strong>Buscar</strong>. Você será levado para uma página com
+                todas as receitas que combinam com o que você procurou. Depois é só clicar na categoria onde está a
+                receita que você quer, preparar e se deliciar.</p>
+
+            <p>E se não encontrar exatamente o que você procura, não se preocupe! Continuamos atualizando o site com
+                mais receitas deliciosas para todos os gostos.</p>
+            <br>
+            <h3>O que você vai encontrar aqui?</h3>
+            <ul>
+                <li><strong>Receitas vegetarianas:</strong> para quem quer opções sem carne, fáceis e saborosas.</li>
+                <li><strong>Pratos com peixes:</strong> receitas leves e deliciosas do mar.</li>
+                <li><strong>Massas incríveis:</strong> rápidas, práticas e de dar água na boca.</li>
+                <li><strong>Sobremesas irresistíveis:</strong> porque sempre cabe um docinho, né?</li>
+            </ul>
+            <br>
+            <p>Então, já sabe! Salve este site nos seus favoritos e venha sempre que precisar de uma inspiração
+                culinária rápida e gostosa.</p>
+            <br>
+            <h3><strong>Bom apetite!</strong></h3>
+        </section>
+
         <section class="grid">
             <div class="recipe-block" id="vegetarianas">
                 <a href="vegetarianas.html"><img src="img/vegetarianas.jpg" alt="vegetarianas">
@@ -62,15 +99,43 @@
             Nenhuma receita ou ingrediente encontrado.
         </div>
     </main>
-    <footer>
-        <p>&copy; 2024 Alana's Page. Todos os direitos reservados</p>
-        <p>Contato: <a href="mailto:alanatureza@hotmail.com">alanatureza@hotmail.com</a></p>
-        <p>Siga minhas redes sociais:
-            <a href="https://www.instagram.com/tendanapraia">Instagram</a>
-            <a href="https://www.linkedin.com/in/alana-daniele/">LinkedIn</a>
-        </p>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Alana's Page. Todos os direitos reservados</p>
+            <p>Contato: <a href="mailto:alanatureza@hotmail.com">alanatureza@hotmail.com</a></p>
+            <p>Siga minhas redes sociais:
+                <a href="https://www.instagram.com/tendanapraia">Instagram</a>
+                <a href="https://www.linkedin.com/in/alana-daniele/">LinkedIn</a>
+            </p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        // Função de busca e redirecionamento
+        document.getElementById('search-btn').addEventListener('click', function () {
+            const searchTerm = document.getElementById('search-input').value.trim();
+
+            if (searchTerm) {
+                localStorage.setItem('searchTerm', searchTerm); // Armazena o termo de busca no localStorage
+                window.location.href = 'resultados.html'; // Redireciona para a página de resultados
+            } else {
+                alert('Por favor, insira um termo de busca.'); // Exibe uma mensagem de alerta se o campo estiver vazio
+            }
+        });
+
+        // Permitir que o Enter acione a busca
+        document.getElementById('search-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const searchTerm = document.getElementById('search-input').value.trim();
+
+                if (searchTerm) {
+                    localStorage.setItem('searchTerm', searchTerm);
+                    window.location.href = 'resultados.html';
+                } else {
+                    alert('Por favor, insira um termo de busca.');
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

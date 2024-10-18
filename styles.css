@@ -113,6 +113,58 @@ nav ul li a:hover {
 
 
 /* Main */
+/* Centralizar título e texto de boas-vindas */
+/* h2 {
+    text-align: center;
+} */
+
+h2,
+p {
+    text-align: left;
+}
+
+/* Adicionar espaçamento entre as seções */
+section {
+    padding: 20px;
+}
+
+/* Estilizar a lista para bullets */
+ul {
+    list-style-type: disc;
+    margin-left: 40px;
+    text-align: left;
+}
+
+/* Melhorar o espaçamento das imagens */
+img {
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Estilo geral para o site */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Estilo para os subtítulos */
+h3 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+/* Estilo para os textos importantes */
+strong {
+    color: #FF6347;
+}
+
+/* Estilo do container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 main {
     flex: 1;
     padding: 2rem;
@@ -275,10 +327,17 @@ button:hover {
 footer {
     background-color: #ff6347;
     color: white;
-    text-align: center;
     padding: 1rem 0;
     margin-top: auto;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+}
+
+.footer-content {
+    text-align: center;
+    /* Centraliza o texto e os links internamente */
 }
 
 footer a {

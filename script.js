@@ -1,50 +1,19 @@
-// Função para carregar as receitas de um arquivo JSON
-async function loadRecipes() {
-    try {
-        const response = await fetch('recipes.json');
-        const recipes = await response.json();
-        return recipes;
-    } catch (error) {
-        console.error('Erro ao carregar as receitas:', error);
-        return [];
-    }
-}
-
-// Função de busca
-async function searchRecipes() {
+document.getElementById('search-btn').addEventListener('click', function () {
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
-    const recipes = await loadRecipes(); // Carregar todas as receitas
-    const resultsContainer = document.getElementById('search-results'); // Usar 'search-results'
-    resultsContainer.innerHTML = ''; // Limpar resultados anteriores
+    const recipeBlocks = document.querySelectorAll('.recipe-block');
 
-    let found = false;
+    recipeBlocks.forEach(block => {
+        const title = block.querySelector('h2').textContent.toLowerCase();
+        const ingredients = block.querySelector('ul').textContent.toLowerCase(); // Busca nos ingredientes
 
-    // Percorrer as receitas e buscar por termo no título ou ingredientes
-    recipes.forEach(recipe => {
-        const title = recipe.title.toLowerCase();
-        const ingredients = recipe.ingredients.toLowerCase();
-
+        // Verifica se o termo está no título ou nos ingredientes
         if (title.includes(searchTerm) || ingredients.includes(searchTerm)) {
-            const recipeBlock = document.createElement('div');
-            recipeBlock.className = 'recipe-block';
-            recipeBlock.innerHTML = `
-                <h2>${recipe.title}</h2>
-                <p><strong>Categoria:</strong> ${recipe.category}</p>
-                <p><strong>Ingredientes:</strong> ${recipe.ingredients}</p>
-            `;
-            resultsContainer.appendChild(recipeBlock);
-            found = true;
+            block.style.display = 'block';  // Exibe o bloco se encontrar correspondência
+        } else {
+            block.style.display = 'none';   // Oculta o bloco se não houver correspondência
         }
     });
-
-    // Exibe uma mensagem se nenhuma correspondência for encontrada
-    const noResultMessage = document.getElementById('no-result-message');
-    if (!found) {
-        noResultMessage.style.display = 'block'; // Exibe a mensagem
-    } else {
-        noResultMessage.style.display = 'none'; // Oculta a mensagem
-    }
-}
+});
 
 // Ação de clique no botão de busca
 document.getElementById('search-btn').addEventListener('click', searchRecipes);
@@ -55,3 +24,13 @@ document.getElementById('search-input').addEventListener('keypress', function (e
         searchRecipes();  // Executa a função de busca
     }
 });
+
+function toggleRecipe(recipeId) {
+    const recipeDetails = document.getElementById(recipeId);
+    if (recipeDetails.style.display === "none") {
+        recipeDetails.style.display = "block"; // Mostra a receita
+    } else {
+        recipeDetails.style.display = "none"; // Esconde a receita
+    }
+}
+
