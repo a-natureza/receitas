@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados da Busca</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/cookbook.png" type="image/x-icon">
 </head>
 
 <body>
@@ -32,6 +33,8 @@
         <div id="no-result-message" style="display: none; color: red;">
             Nenhuma receita ou ingrediente encontrado.
         </div>
+        <!-- Contêiner separado para os resultados da busca -->
+        <div id="results-container"></div>
     </main>
     <footer>
         <p>&copy; 2024 Alana's Page. Todos os direitos reservados</p>
@@ -53,7 +56,9 @@
         async function displaySearchResults() {
             const searchTerm = localStorage.getItem('searchTerm').toLowerCase(); // Recupera o termo de busca
             const recipes = await loadRecipes();
-            const resultsContainer = document.getElementById('search-results');
+            const resultsContainer = document.getElementById('results-container'); // Novo contêiner para resultados
+            const noResultMessage = document.getElementById('no-result-message'); // Mensagem de erro
+
             resultsContainer.innerHTML = ''; // Limpa resultados anteriores
 
             let found = false;
@@ -64,18 +69,18 @@
 
                 if (title.includes(searchTerm) || ingredients.includes(searchTerm)) {
                     const recipeBlock = document.createElement('div');
-                    recipeBlock.className = 'recipe-block'; // Estilize no CSS
+                    recipeBlock.className = 'recipe-block';
                     recipeBlock.innerHTML = `
-                <h2>${recipe.title}</h2>
-                <p><strong>Categoria:</strong> ${recipe.category}</p>
-                <p><strong>Ingredientes:</strong> ${recipe.ingredients}</p>
-            `;
+                        <h2>${recipe.title}</h2>
+                        <p><strong>Categoria:</strong> ${recipe.category}</p>
+                        <p><strong>Ingredientes:</strong> ${recipe.ingredients}</p>
+                    `;
                     resultsContainer.appendChild(recipeBlock);
                     found = true;
                 }
             });
 
-            const noResultMessage = document.getElementById('no-result-message');
+            // Exibir ou esconder a mensagem "Nenhum resultado encontrado"
             if (!found) {
                 noResultMessage.style.display = 'block';
             } else {
